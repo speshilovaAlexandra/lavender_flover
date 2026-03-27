@@ -1,53 +1,52 @@
 import { defineStore } from 'pinia';
-import axios from 'axios';
+import api from '@/api';
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
-    user: JSON.parse(localStorage.getItem('user')) || null,
     token: localStorage.getItem('token') || null,
+    user: JSON.parse(localStorage.getItem('user') || 'null'),
   }),
+
+  getters: {
+    isAuthenticated: (state) => !!state.token,
+    isAdmin: (state) => state.user?.role === 'admin',
+  },
 
   actions: {
     async login(email, password) {
-      try {
-   
-        const response = await axios.post('/api/login', { email, password });
+      const res = await api.post('/login', { email, password });
+      this.setAuth(res.data.token, res.data.user);
+    },
 
- 
-        this.token = response.data.token;
-        this.user = response.data.user;
+    async register(name, email, password, password_confirmation) {
+      const res = await api.post('/register', { name, email, password, password_confirmation });
+      this.setAuth(res.data.token, res.data.user);
+    },
 
-        localStorage.setItem('token', this.token);
-        localStorage.setItem('user', JSON.stringify(this.user));
-        
-
-        axios.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
-        
-     
-
-      } catch (error) {
-
-        this.user = null;
-        this.token = null;
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        throw error; // Пробрасываем ошибку обратно в Login.vue
-      }
+    setAuth(token, user) {
+      this.token = token;
+      this.user = user;
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
     },
 
     logout() {
-      this.user = null;
       this.token = null;
+      this.user = null;
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      delete axios.defaults.headers.common['Authorization'];
     },
     
-
-    checkAuth() {
-      if (this.token) {
-        axios.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
-      }
+    // Загрузка актуальных данных пользователя
+    async fetchUser() {
+        if(!this.token) return;
+        try {
+            const res = await api.get('/user');
+            this.user = res.data;
+            localStorage.setItem('user', JSON.stringify(res.data));
+        } catch (e) {
+            this.logout();
+        }
     }
   },
 });
