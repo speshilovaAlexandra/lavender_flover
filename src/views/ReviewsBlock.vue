@@ -72,11 +72,11 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-// 🔥 НАСТРОЙКА: Укажи адрес своего Laravel API
-// Если фронтенд и бэкенд на одном домене — оставь пустую строку или '/'
-// Если на разных — укажи полный адрес, например: 'http://localhost:8000'
-const API_BASE = '/api' 
-const API_URL = API_BASE + '/api/ReviewsBlock'
+// 🔥 ИСПРАВЛЕНИЕ:
+// 1. Убрали двойной /api. 
+// 2. Путь должен совпадать с тем, что мы написали в vercel.json (rewrite).
+// Если в vercel.json мы писали '/api/:path*', то здесь начинаем сразу с '/api/...'
+const API_URL = '/api/ReviewsBlock'
 
 const reviews = ref([])
 const loading = ref(false)
