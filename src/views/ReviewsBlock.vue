@@ -75,7 +75,7 @@ import { ref, onMounted } from 'vue'
 // 🔥 НАСТРОЙКА: Укажи адрес своего Laravel API
 // Если фронтенд и бэкенд на одном домене — оставь пустую строку или '/'
 // Если на разных — укажи полный адрес, например: 'http://localhost:8000'
-const API_BASE = 'http://lavender.speshiqa.beget.tech' 
+const API_BASE = '/api' 
 const API_URL = API_BASE + '/api/ReviewsBlock'
 
 const reviews = ref([])
