@@ -115,7 +115,7 @@ const handleRegister = async () => {
   loading.value = true;
   try {
     await authStore.register(form.value.name, form.value.email, form.value.password, form.value.password_confirmation);
-    router.push('/');
+    window.location.href = '/';
   } catch (e) {
     const errors = e.response?.data?.errors;
     if (errors) {
