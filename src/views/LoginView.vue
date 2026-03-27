@@ -80,7 +80,7 @@ const handleLogin = async () => {
   loading.value = true;
   try {
     await authStore.login(form.value.email, form.value.password);
-    router.push('/');
+    window.location.href = '/';
   } catch (e) {
     const errors = e.response?.data?.errors;
     if (errors) {
