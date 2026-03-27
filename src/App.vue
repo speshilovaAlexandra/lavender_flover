@@ -170,7 +170,7 @@ const logout = () => {
   localStorage.removeItem('token');
   localStorage.removeItem('user');
   // router.push('/');
-  window.location.href = '/login';
+  window.location.href = '/';
 };
 </script>
 
