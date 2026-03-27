@@ -145,45 +145,22 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const user = ref(null);
 
-// Функция для обновления данных пользователя
-const updateUser = () => {
-  const storedUser = localStorage.getItem('user');
-  const storedToken = localStorage.getItem('token');
-  
-  if (storedToken && storedUser) {
-    user.value = JSON.parse(storedUser);
-  } else {
-    user.value = null;
-  }
-};
-
 onMounted(() => {
-  // 1. Инициализация при загрузке
-  updateUser();
-
-  // 2. Слушаем изменения в localStorage (в этой же вкладке)
-  // Это сработает, когда вы сделаете localStorage.setItem после входа
-  window.addEventListener('storage', (e) => {
-    if (e.key === 'token' || e.key === 'user') {
-      updateUser();
-    }
-  });
-
-  // 3. (Опционально) Если вход происходит в том же скрипте без перезагрузки,
-  // можно также слушать кастомное событие, если вы его вызываете
-  window.addEventListener('auth-changed', updateUser);
+  const storedUser = localStorage.getItem('user');
+  if (storedUser) {
+    user.value = JSON.parse(storedUser);
+  }
 });
 
 const isAuthenticated = computed(() => !!localStorage.getItem('token'));
 const isAdmin = computed(() => user.value?.role === 'admin');
 const userName = computed(() => user.value?.name || 'User');
-
 const cartCount = computed(() => {
   const cart = JSON.parse(localStorage.getItem('cart') || '[]');
   return cart.reduce((sum, item) => sum + item.qty, 0);
@@ -192,8 +169,6 @@ const cartCount = computed(() => {
 const logout = () => {
   localStorage.removeItem('token');
   localStorage.removeItem('user');
-  // Принудительно вызываем обновление перед редиректом
-  updateUser(); 
   router.push('/login');
 };
 </script>
