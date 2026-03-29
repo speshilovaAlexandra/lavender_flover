@@ -84,12 +84,7 @@ import { useRoute, useRouter } from 'vue-router'
 import api from '@/api'
 
 export default {
-// Выносим SEO-данные в отдельный объект для чистоты кода
-  const seo = {
-    title: 'Доставка цветов Пермь — купить букет с доставкой недорого | LAVENDER',
-    description: 'Быстрая доставка цветов по Перми от 2 часов. Бесплатно при заказе от 5000 ₽. Закажите букет с доставкой на дом или в офис. Скидки постоянным клиентам!',
-    subtitle: 'Оформите заказ с доставкой на дом или в офис за 2 часа'
-  };
+
 
   setup() {
     const route = useRoute()
@@ -98,7 +93,13 @@ export default {
     const qty = ref(1)
     const loading = ref(true)
     const error = ref(null)
-
+    
+// Выносим SEO-данные в отдельный объект для чистоты кода
+  const seo = {
+    title: 'Доставка цветов Пермь — купить букет с доставкой недорого | LAVENDER',
+    description: 'Быстрая доставка цветов по Перми от 2 часов. Бесплатно при заказе от 5000 ₽. Закажите букет с доставкой на дом или в офис. Скидки постоянным клиентам!',
+    subtitle: 'Оформите заказ с доставкой на дом или в офис за 2 часа'
+  };
     const isAuthenticated = () => {
       return !!localStorage.getItem('token')
     }
