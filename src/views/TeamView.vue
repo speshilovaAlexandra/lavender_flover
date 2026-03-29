@@ -51,7 +51,7 @@ const teamMembers = ref([
     position: 'Менеджер по закупкам',
     phone: '+7 (999) 234-56-78',
     email: 'mikhail@lavender.ru',
-    photo: 'https://img.freepik.com/premium-photo/portrait-young-woman-standing-against-plants_1048944-21369490.jpg?semt=ais_hybrid&w=740&q=80',
+    photo: 'https://pikaso.cdnpk.net/private/production/3774947885/render.jpg?token=exp=1775001600~hmac=95c58f6cbfac185b2e123c9a1ad8481adc585f87ee64739d24077eefade6eadd&preview=true',
     quote: 'Только свежие цветы от проверенных поставщиков.'
   },
   {
