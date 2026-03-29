@@ -166,6 +166,20 @@ const load = async () => {
   } catch (e) {
     console.error("Ошибка загрузки", e);
   }
+    // Устанавливаем заголовок вкладки
+  document.title = seo.title;
+  
+  // Находим или создаем мета-тег description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  
+  // Обновляем контент
+  metaDescription.content = seo.description;
 };
 
 const handleFileUpload = (e) => {
@@ -250,6 +264,12 @@ const deleteItem = async (id) => {
 };
 
 onMounted(load);
+
+// Выносим SEO-данные в отдельный объект для чистоты кода
+const seo = {
+  title: 'Управление товарами — Админ панель | LAVENDER',
+  description: 'Панель администратора для управления каталогом цветов.'
+};
 </script>
 
 <style scoped>
