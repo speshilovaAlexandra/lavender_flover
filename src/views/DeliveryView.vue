@@ -3,8 +3,8 @@
     <div class="container">
       <!-- H1 с основным коммерческим запросом -->
       <header class="page-header">
-      <h1 class="page-title">{{ seo.title }}</h1>
-      <p class="subtitle">{{ seo.subtitle }}</p>
+      <h1 class="page-title">Немного о том как работает наша доставка</h1>
+      <p class="subtitle">Привезем на дом или в офис за 2 часа</p>
         <router-link to="/">Перейти в каталог</router-link>
         <router-link to="/product/1">Популярный букет</router-link>
       </header>
