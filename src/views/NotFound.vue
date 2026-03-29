@@ -26,6 +26,30 @@
 </template>
 
 <script setup>
+  import { onMounted } from 'vue';
+
+// Выносим SEO-данные в отдельный объект для чистоты кода
+const seo = {
+  title: 'Страница не найдена — 404 | LAVENDER',
+  description: 'К сожалению, такая страница не найдена
+};
+
+onMounted(() => {
+  // Устанавливаем заголовок вкладки
+  document.title = seo.title;
+  
+  // Находим или создаем мета-тег description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  
+  // Обновляем контент
+  metaDescription.content = seo.description;
+});
 </script>
 
 <style scoped>
