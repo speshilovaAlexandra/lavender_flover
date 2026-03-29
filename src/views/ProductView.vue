@@ -149,8 +149,8 @@ export default {
       } finally {
         loading.value = false
       }
-   
-}
+    })
+
     return {
       flower,
       qty,
@@ -166,7 +166,6 @@ export default {
     }
   }
 }
- 
 </script>
 
 <style scoped>
