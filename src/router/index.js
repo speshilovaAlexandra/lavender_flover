@@ -16,7 +16,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', name: 'catalog', component: CatalogView },
-    { path: '/product/:id', name: 'product', component: ProductView, props: true, meta: {title: 'Карточка товара | LAVENDER', description: 'товар'}  },
+    { path: '/product/:id', name: 'product', component: ProductView, props: true  },
     { path: '/cart', name: 'cart', component: CartView, meta: { requiresAuth: true } },
     { path: '/login', name: 'login', component: LoginView },
     { path: '/delivery', name: 'delivery', component: DeliveryView },
