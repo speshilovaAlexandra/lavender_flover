@@ -68,7 +68,8 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
-
+import { onMounted } from 'vue';
+  
 const form = ref({ email: '', password: '' });
 const error = ref('');
 const loading = ref(false);
@@ -92,6 +93,31 @@ const handleLogin = async () => {
     loading.value = false;
   }
 };
+
+
+
+// Выносим SEO-данные в отдельный объект для чистоты кода
+const seo = {
+  title: 'Вход в личный кабинет | LAVENDER',
+  description: 'Войдите в свой аккаунт для оформления заказа'
+};
+
+onMounted(() => {
+  // Устанавливаем заголовок вкладки
+  document.title = seo.title;
+  
+  // Находим или создаем мета-тег description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  
+  // Обновляем контент
+  metaDescription.content = seo.description;
+});
 </script>
 
 <style scoped>
