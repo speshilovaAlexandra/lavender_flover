@@ -23,6 +23,7 @@
             :src="getImageUrl(flower.img)" 
             :alt="flower.nazvanie"
             class="product-img"
+            loading="lazy"
             @error="onImageError"
           >
         </div>
