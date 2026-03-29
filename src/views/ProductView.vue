@@ -84,6 +84,13 @@ import { useRoute, useRouter } from 'vue-router'
 import api from '@/api'
 
 export default {
+// Выносим SEO-данные в отдельный объект для чистоты кода
+  const seo = {
+    title: 'Доставка цветов Пермь — купить букет с доставкой недорого | LAVENDER',
+    description: 'Быстрая доставка цветов по Перми от 2 часов. Бесплатно при заказе от 5000 ₽. Закажите букет с доставкой на дом или в офис. Скидки постоянным клиентам!',
+    subtitle: 'Оформите заказ с доставкой на дом или в офис за 2 часа'
+  };
+
   setup() {
     const route = useRoute()
     const router = useRouter()
@@ -149,6 +156,20 @@ export default {
       } finally {
         loading.value = false
       }
+        // Устанавливаем заголовок вкладки
+  document.title = seo.title;
+  
+  // Находим или создаем мета-тег description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  
+  // Обновляем контент
+  metaDescription.content = seo.description;
     })
 
     return {
