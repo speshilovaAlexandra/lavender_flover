@@ -95,6 +95,7 @@
             src="../img/img1.webp" 
             alt="Курьер доставляет букет цветов клиенту на дом — быстрая доставка цветов в Перми"
             class="delivery-image"
+            loading="lazy"
           >
           <figcaption>Наши курьеры бережно доставят ваш букет в любое время суток</figcaption>
         </figure>
