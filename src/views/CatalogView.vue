@@ -69,6 +69,12 @@ import { ref, onMounted } from 'vue';
 import api from '@/api';
 import { useAuthStore } from '@/stores/auth';
 
+// SEO метаданные
+const seo = {
+  title: 'Каталог цветов — купить букеты недорого в Перми | LAVENDER',
+  description: 'Большой выбор свежих цветов и букетов в Перми. Розы, тюльпаны, хризантемы и другие цветы с доставкой. Низкие цены, акции и скидки!',
+};
+
 const flowers = ref([]);
 const loading = ref(true);
 const error = ref(null);
@@ -109,6 +115,16 @@ const addToCart = (flower) => {
 };
 
 onMounted(async () => {
+  // Установка метатегов
+  document.title = seo.title;
+  let metaDescription = document.querySelector('meta[name="description"]');
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  metaDescription.content = seo.description;
+
   try {
     const res = await api.get('/flowers');
     flowers.value = Array.isArray(res.data) ? res.data : [];

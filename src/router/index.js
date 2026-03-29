@@ -23,7 +23,6 @@ const router = createRouter({
     { path: '/register', name: 'register', component: RegInView },
     { path: '/team', name: 'team', component: TeamView },
     { path: '/ReviewsBlock', name: 'ReviewsBlock', component: ReviewsBlock },
-    { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
     { path: '/profile', name: 'profile', component: Profile, meta: { requiresAuth: true } },
     // АДМИН
     { 
@@ -38,6 +37,8 @@ const router = createRouter({
       component: AdminOrders,
       meta: { requiresAuth: true, requiresAdmin: true }
     },
+    // 404 - должен быть ПОСЛЕДНИМ
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
   ]
 })
 
