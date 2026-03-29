@@ -92,6 +92,20 @@ const error = ref('');
 
 onMounted(() => {
   cart.value = JSON.parse(localStorage.getItem('cart') || '[]');
+
+    // Устанавливаем заголовок вкладки сео штука
+  document.title = seo.title;
+  
+  // Находим или создаем мета-тег description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+    // Обновляем контент
+  metaDescription.content = seo.description;
 });
 
 const total = computed(() => cart.value.reduce((s, i) => s + i.price * i.qty, 0));
@@ -125,6 +139,16 @@ const sendOrder = async () => {
     loading.value = false;
   }
 };
+
+  import { onMounted } from 'vue';
+
+// Выносим SEO-данные в отдельный объект для чистоты кода
+const seo = {
+  title: 'Корзина — оформление заказа | LAVENDER',
+  description: 'Оформите заказ на выбранные цветы в корзине'
+};
+
+
 </script>
 
 <style scoped>
