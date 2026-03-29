@@ -149,6 +149,22 @@ export default {
       } finally {
         loading.value = false
       }
+
+
+        // Устанавливаем заголовок вкладки
+  document.title = seo.title;
+  
+  // Находим или создаем мета-тег description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  
+  // Обновляем контент
+  metaDescription.content = seo.description;
     })
 
     return {
@@ -166,6 +182,14 @@ export default {
     }
   }
 }
+
+
+// Выносим SEO-данные в отдельный объект для чистоты кода
+const seo = {
+  title: 'Купить букет с доставкой | LAVENDER',
+  description: 'Закажите прекрасный букет {{product}} с быстрой доставкой по Перми. Свежие цветы, доступные цены.'
+};
+
 </script>
 
 <style scoped>
