@@ -92,6 +92,12 @@ export default {
     const loading = ref(true)
     const error = ref(null)
 
+    // SEO метаданные
+    const seo = {
+      title: 'Купить букет с доставкой | LAVENDER',
+      description: 'Закажите прекрасный букет цветов с быстрой доставкой по Перми. Свежие цветы, доступные цены.',
+    }
+
     const isAuthenticated = () => {
       return !!localStorage.getItem('token')
     }
@@ -140,9 +146,25 @@ export default {
     }
 
     onMounted(async () => {
+      // Установка метатегов
+      document.title = seo.title;
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = 'description';
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.content = seo.description;
+
       try {
         const res = await api.get(`/flowers/${route.params.id}`)
         flower.value = res.data
+        
+        // Обновляем заголовок и описание с данными товара
+        if (flower.value) {
+          document.title = `${flower.value.nazvanie} - Купить букет с доставкой | LAVENDER`;
+          metaDescription.content = `Закажите прекрасный букет ${flower.value.nazvanie} с быстрой доставкой по Перми. Свежие цветы, доступные цены.`;
+        }
       } catch (e) {
         error.value = 'Товар не найден или был удален.'
         console.error(e)
