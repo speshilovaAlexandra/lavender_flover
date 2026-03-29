@@ -45,6 +45,7 @@
               :src="getImageUrl(flower.img)" 
               :alt="flower.nazvanie"
               class="card-img"
+              loading="lazy"
               @click="$router.push('/product/' + flower.id)"
               @error="onImageError"
             >
