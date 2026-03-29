@@ -61,7 +61,7 @@
           </div>
           <div class="summary-row total">
             <span>Итого к оплате:</span>
-            <span>${{ total.toFixed(2) }}</span>
+            <span>{{ total.toFixed(2) }}₽</span>
           </div>
           
           <div class="checkout-area">
