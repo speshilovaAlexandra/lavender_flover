@@ -10,7 +10,7 @@
       <div class="team-grid">
         <div v-for="member in teamMembers" :key="member.id" class="team-card">
           <div class="member-photo">
-            <img :src="member.photo" :alt="`${member.name} ${member.surname}`">
+            <img :src="member.photo" :alt="`${member.name} ${member.surname}`" loading="lazy">
           </div>
           <div class="member-info">
             <h3 class="member-name">{{ member.name }} {{ member.surname }}</h3>
