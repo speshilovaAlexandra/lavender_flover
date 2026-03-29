@@ -207,6 +207,20 @@ onMounted(async () => {
   } finally {
     loading.value = false;
   }
+    // Устанавливаем заголовок вкладки
+  document.title = seo.title;
+  
+  // Находим или создаем мета-тег description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  
+  // Обновляем контент
+  metaDescription.content = seo.description;
 });
 
 const updateStatus = async (order) => {
@@ -233,6 +247,14 @@ const viewDetails = (order) => {
   selectedOrder.value = order;
   showModal.value = true;
 };
+
+
+// Выносим SEO-данные в отдельный объект для чистоты кода
+const seo = {
+  title: 'Управление заказами — Админ панель | LAVENDER',
+  description: 'Панель администратора для обработки заказов клиентов.'
+};
+
 </script>
 
 <style scoped>
