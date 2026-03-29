@@ -139,10 +139,6 @@ const sendOrder = async () => {
     loading.value = false;
   }
 };
-
-  import { onMounted } from 'vue';
-
-// Выносим SEO-данные в отдельный объект для чистоты кода
 const seo = {
   title: 'Корзина — оформление заказа | LAVENDER',
   description: 'Оформите заказ на выбранные цветы в корзине'
