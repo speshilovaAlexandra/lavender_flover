@@ -24,21 +24,18 @@
           <h3>Сроки и стоимость доставки</h3>
           <ul class="info-list">
             <li>
-              <span class="icon">🚚</span>
               <div>
                 <strong>Экспресс-доставка</strong> — от 2 часов
                 <span class="detail">Бесплатно при заказе от 5000 ₽</span>
               </div>
             </li>
             <li>
-              <span class="icon">📅</span>
               <div>
                 <strong>Доставка к времени</strong> — точно к назначенному часу
                 <span class="detail">+300 ₽ к стоимости заказа</span>
               </div>
             </li>
             <li>
-              <span class="icon">🌙</span>
               <div>
                 <strong>Ночная доставка</strong> — круглосуточно
                 <span class="detail">+500 ₽ к стоимости заказа</span>
@@ -62,14 +59,9 @@
               <span class="price">от 350 ₽</span>
             </div>
             <div class="zone-card">
-              <h4>Пермская область</h4>
+              <h4>Пермский край</h4>
               <p>До 30 км от Перми</p>
               <span class="price">от 800 ₽</span>
-            </div>
-            <div class="zone-card">
-              <h4>Пермский край</h4>
-              <p>От 30 км от Перми</p>
-              <span class="price">Индивидуально</span>
             </div>
           </div>
         </section>
