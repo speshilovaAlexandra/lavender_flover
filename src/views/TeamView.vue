@@ -61,18 +61,8 @@ const teamMembers = ref([
     position: 'Руководитель службы доставки',
     phone: '+7 (999) 345-67-89',
     email: 'elena@lavender.ru',
-    photo: 'https://img.freepik.com/premium-photo/portrait-young-woman-standing-against-plants_1048944-21369490.jpg?semt=ais_hybrid&w=740&q=80',
+    photo: 'https://pikaso.cdnpk.net/private/production/3774932460/render.png?token=exp=1775001600~hmac=e64738526ea01e9db953f82c54305454923bb1795ab692c3446ab04657dd5a17&preview=1',
     quote: 'Доставим вовремя, в любую погоду, с улыбкой!'
-  },
-  {
-    id: 4,
-    name: 'Ольга',
-    surname: 'Клиентова',
-    position: 'Менеджер по работе с клиентами',
-    phone: '+7 (999) 456-78-90',
-    email: 'olga@lavender.ru',
-    photo: 'https://img.freepik.com/premium-photo/portrait-young-woman-standing-against-plants_1048944-21369490.jpg?semt=ais_hybrid&w=740&q=80',
-    quote: 'Ваше удовлетворение — моя главная награда.'
   }
 ]);
 
