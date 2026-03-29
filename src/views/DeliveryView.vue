@@ -92,7 +92,7 @@
         <!-- Изображение с ALT -->
         <figure class="image-block">
           <img 
-            src="../img/img1.jpg" 
+            src="../img/img1.webp" 
             alt="Курьер доставляет букет цветов клиенту на дом — быстрая доставка цветов в Перми"
             class="delivery-image"
           >
