@@ -131,7 +131,29 @@ onMounted(async () => {
   } finally {
     loading.value = false;
   }
+
+    // Устанавливаем заголовок вкладки
+  document.title = seo.title;
+  
+  // Находим или создаем мета-тег description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  
+  // Обновляем контент
+  metaDescription.content = seo.description;
 });
+
+// Выносим SEO-данные в отдельный объект для чистоты кода
+const seo = {
+  title: 'Личный кабинет — история заказов | LAVENDER',
+  description: 'Управляйте своими заказами в личном кабинете.'
+};
+
 </script>
 
 <style scoped>
