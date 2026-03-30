@@ -48,7 +48,6 @@
               loading="lazy"
               @click="$router.push('/product/' + flower.id)"
               @error="onImageError"
-              Cache-Control: max-age=2592000
             >
 
           </div>
