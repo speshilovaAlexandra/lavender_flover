@@ -97,8 +97,8 @@ export default {
     
 // Выносим SEO-данные в отдельный объект для чистоты кода
   const seo = {
-    title: `Купить ${flower.nazvanie} с доставкой по Перми — цена, фото | LAVENDER`,
-    description: `${flower.value?.opisanie?.slice(0, 120) || 'Свежий букет цветов'} Доставка от 2 часов Гарантия свежести 7 дней. Закажите онлайн!`
+    title: 'Купить "${flower.value.nazvanie}" с доставкой по Перми — цена, фото | LAVENDER',
+    description: '${flower.value?.opisanie?.slice(0, 120) || 'Свежий букет цветов'} Доставка от 2 часов Гарантия свежести 7 дней. Закажите онлайн!'
   };
     const isAuthenticated = () => {
       return !!localStorage.getItem('token')
