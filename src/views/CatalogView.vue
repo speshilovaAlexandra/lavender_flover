@@ -83,7 +83,6 @@ const getImageUrl = (imgPath) => {
   // if (!imgPath) return '/images/placeholder.jpg';
   if (imgPath.startsWith('http')) return imgPath;
   const clean = imgPath.replace(/^\//, '');
-  Cache-Control: max-age=2592000;
   return `${getBaseUrl()}/storage/${clean}`;
   
 };
