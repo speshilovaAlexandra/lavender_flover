@@ -6,7 +6,7 @@
         <p class="delivery-hint">
           Бесплатная <router-link to="/delivery">доставка цветов</router-link> при заказе от 5000 ₽</p>
         <div class="header-content">
-          <h1 class="page-title">Наши лучшие продажи</h1>
+          <h1 class="page-title">Продаем только свежие цветы</h1>
         </div>
         
         <!-- Filters (Placeholder for future logic) -->
