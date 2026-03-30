@@ -41,15 +41,23 @@
       <div v-else class="product-grid">
         <div v-for="flower in flowers" :key="flower.id" class="product-card">
           <div class="card-image-wrapper">
-            <img 
-              :src="getImageUrl(flower.img)" 
-              :alt="flower.nazvanie"
-              class="card-img"
-              loading="lazy"
-              @click="$router.push('/product/' + flower.id)"
-              @error="onImageError"
-            >
-
+            <picture>
+              <source
+                :srcset="getImageUrl(flower.img, 'webp')"
+                type="image/webp"
+              >
+              <img
+                :src="getImageUrl(flower.img)"
+                :alt="flower.nazvanie"
+                class="card-img"
+                loading="lazy"
+                :fetchpriority="index < 4 ? 'high' : 'auto'"
+                width="400"
+                height="400"
+                @click="$router.push('/product/' + flower.id)"
+                @error="onImageError"
+              >
+            </picture>
           </div>
           
           <div class="card-details">
