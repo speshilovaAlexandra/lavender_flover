@@ -67,7 +67,7 @@
         <div class="guarantees-section">
           <div class="guarantee-item">
             <div class="text">
-              <h4>Быстрая доставка</h4>
+              <h4>Доставка которую не придется ждать</h4>
               <p>Доставим в течение 2 часов</p>
             </div>
           </div>
