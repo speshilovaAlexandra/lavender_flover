@@ -77,6 +77,22 @@
       </div>
     </div>
   </div>
+  <!-- После основного контента товара -->
+  <section class="related-products">
+    <h3>С этим букетом также покупают</h3>
+    <div class="product-grid">
+        <router-link 
+          v-for="item in relatedFlowers" 
+          :key="item.id"
+          :to="`/product/${item.id}`"
+          class="product-card-mini"
+        >
+        <img :src="getImageUrl(item.img)" :alt="item.nazvanie">
+        <span>{{ item.nazvanie }}</span>
+        <strong>{{ formatPrice(item.price) }}</strong>
+      </router-link>
+    </div>
+  </section>
 </template>
 
 <script>
