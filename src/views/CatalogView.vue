@@ -86,8 +86,6 @@ const authStore = useAuthStore();
 // Берем URL из конфига axios, чтобы не хардкодить
 const getBaseUrl = () => api.defaults.baseURL.replace('/api', ''); 
 
-const getBaseUrl = () => api.defaults.baseURL.replace('/api', ''); 
-
 const getImageUrl = (imgPath) => {
   // if (!imgPath) return '/images/placeholder.jpg';
   if (imgPath.startsWith('http')) return imgPath;
