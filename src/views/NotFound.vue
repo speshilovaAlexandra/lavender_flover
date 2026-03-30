@@ -13,13 +13,7 @@
             Вернуться на главную
           </router-link>
         </div>
-        <div class="error-illustration">
-          <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
-            <circle cx="100" cy="100" r="80" fill="#f3f0f7"/>
-            <path d="M60 100 L80 120 L140 60" stroke="#481C69" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="100" cy="100" r="90" stroke="#481C69" stroke-width="4" stroke-dasharray="10 10" opacity="0.3"/>
-          </svg>
-        </div>
+        
       </div>
     </div>
   </div>
