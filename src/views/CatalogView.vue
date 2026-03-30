@@ -87,7 +87,7 @@ const authStore = useAuthStore();
 const getBaseUrl = () => api.defaults.baseURL.replace('/api', ''); 
 
 const getImageUrl = (imgPath, format = 'jpg') => {
-  if (!imgPath) return '/images/placeholder.jpg';
+  //if (!imgPath) return '/images/placeholder.jpg';
   if (imgPath.startsWith('http')) return imgPath;
   const clean = imgPath.replace(/^\/|\.jpg$/gi, '');
   const ext = format === 'webp' ? '.webp' : '.jpg';
