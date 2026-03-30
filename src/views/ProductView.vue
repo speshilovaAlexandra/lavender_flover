@@ -58,22 +58,6 @@
               </button>
             </div>
           </div>
-          <!-- После основного контента товара -->
-  <section class="related-products">
-    <h3>С этим букетом также покупают</h3>
-    <div class="product-grid">
-        <router-link 
-          v-for="item in relatedFlowers" 
-          :key="item.id"
-          :to="`/product/${item.id}`"
-          class="product-card-mini"
-        >
-        <img :src="getImageUrl(item.img)" :alt="item.nazvanie">
-        <span>{{ item.nazvanie }}</span>
-        <strong>{{ formatPrice(item.price) }}</strong>
-      </router-link>
-    </div>
-  </section>
           <button class="btn-add-to-cart" @click="addToCart" :disabled="!isAuthenticated()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="9" cy="21" r="1"></circle>
