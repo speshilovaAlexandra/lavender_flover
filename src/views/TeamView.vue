@@ -51,7 +51,7 @@ const teamMembers = ref([
     position: 'Менеджер по закупкам',
     phone: '+7 (999) 234-56-78',
     email: 'mikhail@lavender.ru',
-    photo: 'https://pikaso.cdnpk.net/private/production/3774947885/render.jpg?token=exp=1775001600~hmac=95c58f6cbfac185b2e123c9a1ad8481adc585f87ee64739d24077eefade6eadd&preview=true',
+    photo: 'https://s.pro-goszakaz.ru/images/preview/1200x800/f3eaccdc0bcc039aca2a0919d424530e.jpg',
     quote: 'Только свежие цветы от проверенных поставщиков.'
   },
   {
@@ -61,7 +61,7 @@ const teamMembers = ref([
     position: 'Руководитель службы доставки',
     phone: '+7 (999) 345-67-89',
     email: 'elena@lavender.ru',
-    photo: 'https://pikaso.cdnpk.net/private/production/3774932460/render.png?token=exp=1775001600~hmac=e64738526ea01e9db953f82c54305454923bb1795ab692c3446ab04657dd5a17&preview=1',
+    photo: 'https://img.freepik.com/premium-photo/young-caucasian-female-courier-delivering-pink-flowers-sunny-urban-street_653623-21215.jpg?semt=ais_hybrid&w=740&q=80',
     quote: 'Доставим вовремя, в любую погоду, с улыбкой!'
   }
 ]);
