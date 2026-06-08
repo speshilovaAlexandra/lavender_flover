@@ -5,6 +5,7 @@
       "destination": "http://lavender.speshiqa.beget.tech/api/:path*"
     },
     {
+      "buildCommand": "php artisan storage:link && npm run build",
       "source": "/(.*)",
       "destination": "/"
     }
