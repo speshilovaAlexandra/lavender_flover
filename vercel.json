@@ -8,6 +8,8 @@
       "buildCommand": "php artisan storage:link && npm run build",
       "source": "/(.*)",
       "destination": "/"
+
+      
     }
   ]
 }
